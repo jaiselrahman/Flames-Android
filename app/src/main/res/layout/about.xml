@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_centerInParent="true"
+		android:lines="1"
+		android:text="Version   1.1.1"
+		android:singleLine="false"
+		android:gravity="center"
+		android:typeface="serif"
+		android:id="@+id/ev1"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="FLAMES"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_above="@id/ev1"
+		android:lines="1"
+		android:layout_centerHorizontal="true"
+		android:id="@+id/ev2"
+		android:textSize="66sp"
+		android:textColor="#2523CD"
+		android:typeface="serif"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="By Jaisel Rahman"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/ev1"
+		android:layout_centerVertical="true"
+		android:layout_marginTop="18dp"
+		android:layout_marginLeft="10dp"
+		android:textColor="#2523CD"
+		android:textSize="38sp"
+		android:layout_centerHorizontal="true"
+		android:typeface="serif"/>
+
+</RelativeLayout>
+

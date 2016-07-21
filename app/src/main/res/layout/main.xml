@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="wrap_content">
+
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:gravity="top">
+
+		<EditText
+			android:id="@+id/edit1"
+			android:text=""
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="25sp"
+			android:width="270sp"
+			android:layout_centerHorizontal="true"
+			android:layout_margin="10dp"
+			android:layout_marginTop="20dp"/>
+
+		<EditText
+			android:id="@+id/edit2"
+			android:text=""
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="25sp"
+			android:width="270sp"
+			android:layout_below="@id/edit1"
+			android:layout_centerHorizontal="false"
+			android:layout_margin="10dp"/>
+
+		<TextView
+			android:id="@+id/text"
+			android:layout_height="50dp"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="match_parent"
+			android:width="88dp"
+			style="@style/AppTheme"
+			android:ems="100"
+			android:background="#000000"
+			android:alpha="40"
+			android:ellipsize="start"
+			android:shadowColor="#B42D25"
+			android:textColor="#FFFFFF"
+			android:gravity="center"
+			android:layout_centerInParent="false"
+			android:layout_margin="10dp"
+			android:layout_below="@id/edit2"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="Clear"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/text"
+			android:id="@+id/clear"
+			android:textSize="30sp"
+			android:layout_margin="10dp"
+			android:layout_marginTop="50dp"/>
+
+		<Button
+			android:id="@+id/ok"
+			android:layout_height="wrap_content"
+			android:text="Flame it"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/text"
+			android:layout_alignParentRight="true"
+			android:textSize="30sp"
+			android:layout_margin="10dp"
+			android:layout_marginTop="50dp"/>
+
+	</RelativeLayout>
+
+</ScrollView>
+
