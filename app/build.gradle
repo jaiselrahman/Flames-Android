@@ -6,10 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.jaisel.jai"
-        minSdkVersion 14
+        minSdkVersion 9
         targetSdkVersion 21
-        versionCode 111
-        versionName "1.1.1"
+        versionCode 120
+        versionName "1.2.0"
     }
     buildTypes {
         release {

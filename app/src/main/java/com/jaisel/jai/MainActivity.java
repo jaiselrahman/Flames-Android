@@ -15,7 +15,6 @@ public class MainActivity extends Activity
 	TextView tv;
 	Button clear,ok,about;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -46,7 +45,7 @@ public class MainActivity extends Activity
 						case "a": res = "AFFECTION"; 	break;
 						case "m": res = "MARRIAGE";		break;	
 						case "e": res = "ENEMY"; 		break;	
-						case "s": res = "SISTER"; 		break;	
+						case "s": res = "SIBLING"; 		break;	
 					}
 					tv.setText(res);
 				}
@@ -133,14 +132,14 @@ public class MainActivity extends Activity
 	void rem(int n)
 	{
 		String t;
-
+		int n2;
 		while (a.length() > 1)
 		{
-			n = n % a.length();
-			n = (n == 0) ?a.length(): n;
-			t = a.substring(n);
-			a = a.substring(0, n - 1);
-			a += t;
+			n2 = n % a.length();
+			n2 = (n2 == 0) ?a.length(): n2;
+			t = a.substring(n2);
+			a = a.substring(0, n2 - 1);
+			a = t + a;
 
 		}
 
