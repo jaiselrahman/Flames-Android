@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:versionCode="120"
     android:versionName="1.2.0"
-    package="com.jaisel.jai"
+    package="com.jaisel.flames"
     >
 
     <application
@@ -19,25 +19,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.VIEW"/>
-                <category
-                    android:name="android.intent.category.DEFAULT"/>
-                <data
-                    android:scheme="file"
-                    android:host="*"
-                    android:pathPattern=".\\*.txt"/>
-            </intent-filter>
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.VIEW"/>
-                <category
-                    android:name="android.intent.category.DEFAULT"/>
-                <data
-                    android:mimeType="text/plain"/>
-            </intent-filter>
-        </activity>
+            </activity>
 		<activity android:name="about"></activity>
     </application>
 

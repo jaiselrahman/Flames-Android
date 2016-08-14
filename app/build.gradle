@@ -5,11 +5,11 @@ android {
     buildToolsVersion "21.1.0"
 
     defaultConfig {
-        applicationId "com.jaisel.jai"
-        minSdkVersion 9
+        applicationId "com.jaisel.flames"
+        minSdkVersion 14
         targetSdkVersion 21
-        versionCode 120
-        versionName "1.2.0"
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {

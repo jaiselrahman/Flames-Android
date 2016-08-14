@@ -1,4 +1,4 @@
-package com.jaisel.jai;
+package com.jaisel.flames;
 import android.app.*;
 import android.content.*;
 import android.os.*;
