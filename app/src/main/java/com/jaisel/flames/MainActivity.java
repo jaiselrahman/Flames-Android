@@ -92,12 +92,12 @@ public class MainActivity extends Activity
 		Arrays.sort(ar1);
 		s1 = new String(ar1);
 		s1=s1.trim();
-//		Log.d("debug : ",s1);
+		Log.d("Flames ",s1);
 		ar1 = s2.toCharArray();
 		Arrays.sort(ar1);
 		s2 = new String(ar1);
 		s2=s2.trim();
-//		Log.d("debug : ","\""+s2+"\"")
+     	Log.d("Flames ",s2);
 
 		if (s1.length() < s2.length())
 		{
@@ -122,6 +122,7 @@ public class MainActivity extends Activity
 				}
 			}
 		}	
+		Log.d("Flames ",""+tot);
 		if (tot <= 0) return 0;
 		rem(tot);
 
@@ -140,6 +141,7 @@ public class MainActivity extends Activity
 			t = a.substring(n2);
 			a = a.substring(0, n2 - 1);
 			a = t + a;
+			Log.d("Flames ",a);
 
 		}
 
