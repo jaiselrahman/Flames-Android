@@ -1,1 +1,9 @@
 build/
+app/app-release.apk
+app/app.iml
+.gradle/
+.idea/
+Flames.iml
+gradlew
+gradlew.bat
+local.properties

@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="120"
-    android:versionName="1.2.0"
-    package="com.jaisel.flames"
-    >
+    package="com.jaisel.flames">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" 
-        >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
-		<activity android:name="about"></activity>
+        </activity>
+        <activity android:name="about"
+            android:label="@string/about"></activity>
     </application>
 
 </manifest>

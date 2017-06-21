@@ -1,77 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="wrap_content"
-	android:layout_width="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-	<RelativeLayout
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:gravity="top">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-		<EditText
-			android:id="@+id/edit1"
-			android:text=""
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:textSize="25sp"
-			android:width="270sp"
-			android:layout_centerHorizontal="true"
-			android:layout_margin="10dp"
-			android:layout_marginTop="20dp"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top">
 
-		<EditText
-			android:id="@+id/edit2"
-			android:text=""
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:textSize="25sp"
-			android:width="270sp"
-			android:layout_below="@id/edit1"
-			android:layout_centerHorizontal="false"
-			android:layout_margin="10dp"/>
+            <EditText
+                android:id="@+id/edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                android:width="270sp"
+                android:inputType="text"
+                android:text=""
+                android:textSize="25sp" />
 
-		<TextView
-			android:id="@+id/text"
-			android:layout_height="50dp"
-			android:text=""
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="match_parent"
-			android:width="88dp"
-			style="@style/AppTheme"
-			android:ems="100"
-			android:background="#000000"
-			android:alpha="40"
-			android:ellipsize="start"
-			android:shadowColor="#B42D25"
-			android:textColor="#FFFFFF"
-			android:gravity="center"
-			android:layout_centerInParent="false"
-			android:layout_margin="10dp"
-			android:layout_below="@id/edit2"/>
+            <EditText
+                android:id="@+id/edit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit1"
+                android:layout_centerHorizontal="false"
+                android:layout_margin="10dp"
+                android:width="270sp"
+                android:inputType="text"
+                android:text=""
+                android:textSize="25sp" />
 
-		<Button
-			android:layout_height="wrap_content"
-			android:text="Clear"
-			android:layout_width="wrap_content"
-			android:layout_below="@id/text"
-			android:id="@+id/clear"
-			android:textSize="30sp"
-			android:layout_margin="10dp"
-			android:layout_marginTop="50dp"/>
+            <TextView
+                android:id="@+id/text"
+                style="@style/AppTheme"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/edit2"
+                android:layout_centerInParent="false"
+                android:layout_margin="10dp"
+                android:width="88dp"
+                android:alpha="40"
+                android:background="#000000"
+                android:ellipsize="start"
+                android:ems="100"
+                android:gravity="center"
+                android:shadowColor="#B42D25"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF" />
 
-		<Button
-			android:id="@+id/ok"
-			android:layout_height="wrap_content"
-			android:text="Flame it"
-			android:layout_width="wrap_content"
-			android:layout_below="@id/text"
-			android:layout_alignParentRight="true"
-			android:textSize="30sp"
-			android:layout_margin="10dp"
-			android:layout_marginTop="50dp"/>
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text"
+                android:layout_margin="10dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/clear"
+                android:textSize="30sp" />
 
-	</RelativeLayout>
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/text"
+                android:layout_margin="10dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/flame_it"
+                android:textSize="30sp" />
 
-</ScrollView>
+        </RelativeLayout>
 
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_banner" />
+
+</RelativeLayout>
