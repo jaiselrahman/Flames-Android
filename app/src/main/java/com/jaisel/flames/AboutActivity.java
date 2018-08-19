@@ -3,7 +3,7 @@ package com.jaisel.flames;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class about extends Activity {
+public class AboutActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

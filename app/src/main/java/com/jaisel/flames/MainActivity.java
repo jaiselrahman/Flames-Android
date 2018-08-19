@@ -1,6 +1,7 @@
 package com.jaisel.flames;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,34 +18,57 @@ import com.google.android.gms.ads.AdView;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-    public String name1, name2, result;
-    public String res;
-    EditText mName1, mName2;
-    TextView mResult;
-    Button mClear;
-    AdView madView;
+    private EditText mName1, mName2;
+    private TextView mResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        madView = (AdView) findViewById(R.id.adView);
+        AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        madView.loadAd(adRequest);
+        adView.loadAd(adRequest);
 
-        mResult = (TextView) findViewById(R.id.text);
-        mName1 = (EditText) findViewById(R.id.edit1);
-        mName2 = (EditText) findViewById(R.id.edit2);
-        Button ok = (Button) findViewById(R.id.ok);
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Flames");
+                intent.putExtra(Intent.EXTRA_TEXT, "Check this out\n" +
+                        "http://fundo.ezyro.com/flames/" + mName1.getText() + "/" + mName2.getText());
+                startActivity(Intent.createChooser(intent, "Share"));
+            }
+        });
+
+        findViewById(R.id.fab_web).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://fundo.ezyro.com/flames/" + mName1.getText() + "/" + mName2.getText()));
+                startActivity(intent);
+            }
+        });
+
+        mResult = findViewById(R.id.text);
+        mName1 = findViewById(R.id.edit1);
+        mName2 = findViewById(R.id.edit2);
+        Button ok = findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                result = "flames";
-                name1 = mName1.getText().toString().toLowerCase();
-                name2 = mName2.getText().toString().toLowerCase();
-                res = "FLAMES";
-                flames();
-                switch (result) {
+
+                String name1 = mName1.getText().toString().toLowerCase();
+                String name2 = mName2.getText().toString().toLowerCase();
+
+                if (name1.equals("") && name2.equals("") ||
+                        name1.equals("") && name2.equals("")) {
+                    mResult.setText("");
+                    return;
+                }
+
+                String res = "FLAMES";
+                switch (flames(name1, name2)) {
                     case "f":
                         res = "FRIENDS";
                         break;
@@ -67,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 mResult.setText(res);
             }
         });
-        mClear = (Button) findViewById(R.id.clear);
+        Button mClear = findViewById(R.id.clear);
         mClear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View p1) {
                 mName1.setText("");
@@ -87,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.about:
-                Intent i = new Intent(getApplicationContext(), about.class);
+                Intent i = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivityForResult(i, 0);
                 return true;
             case R.id.exit:
@@ -99,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private int flames() {
+    private String flames(String name1, String name2) {
         int i, j, n = 0, len1, len2, tot;
 
         char[] array = name1.toCharArray();
@@ -133,12 +157,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         Log.d("Flames ", "" + tot);
-        if (tot <= 0) return 0;
-        rem(tot);
-        return tot;
+        if (tot <= 0) return "";
+        return rem(tot);
     }
 
-    private void rem(int n) {
+    private String rem(int n) {
+        String result = "flames";
         String t;
         int n2;
         while (result.length() > 1) {
@@ -147,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             t = result.substring(n2);
             result = result.substring(0, n2 - 1);
             result = t + result;
-            Log.d("Flames ", result);
         }
+        return result;
     }
 }

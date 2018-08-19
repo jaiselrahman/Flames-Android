@@ -1,6 +1,7 @@
 build/
 app/app-release.apk
 app/app.iml
+gradle/
 .gradle/
 .idea/
 Flames.iml

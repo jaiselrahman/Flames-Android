@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:gravity="center_horizontal|center_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/mainlist_bg"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:gravity="center"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lines="1"
         android:text="@string/flames"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#2523CD"
-        android:textSize="66sp"
-        android:typeface="serif" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lines="1"
-        android:maxLines="1"
         android:text="@string/version"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorAccent"
         android:typeface="serif" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/by_jaisel_rahman"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#2523CD"
-        android:textSize="38sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimary"
         android:typeface="serif" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lines="1"
-        android:maxLines="1"
-        android:text="@string/lt_jaisel20_gmail_com_gt"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:autoLink="web"
+        android:text="@string/gmail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorAccent"
         android:typeface="serif" />
 
 </LinearLayout>

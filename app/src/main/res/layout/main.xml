@@ -4,91 +4,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/scrollview"
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:hint="@string/your_name"
+        android:inputType="textPersonName"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit1"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:hint="@string/another_name"
+        android:inputType="textPersonName"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edit2"
+        android:layout_margin="10dp"
+        android:background="#C000"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/clear"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_margin="10dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/clear"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="top">
-
-            <EditText
-                android:id="@+id/edit1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
-                android:layout_marginTop="20dp"
-                android:width="270sp"
-                android:inputType="text"
-                android:text=""
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/edit2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/edit1"
-                android:layout_centerHorizontal="false"
-                android:layout_margin="10dp"
-                android:width="270sp"
-                android:inputType="text"
-                android:text=""
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/text"
-                style="@style/AppTheme"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/edit2"
-                android:layout_centerInParent="false"
-                android:layout_margin="10dp"
-                android:width="88dp"
-                android:alpha="40"
-                android:background="#000000"
-                android:ellipsize="start"
-                android:ems="100"
-                android:gravity="center"
-                android:shadowColor="#B42D25"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text"
-                android:layout_margin="10dp"
-                android:layout_marginTop="50dp"
-                android:text="@string/clear"
-                android:textSize="30sp" />
-
-            <Button
-                android:id="@+id/ok"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/text"
-                android:layout_margin="10dp"
-                android:layout_marginTop="50dp"
-                android:text="@string/flame_it"
-                android:textSize="30sp" />
-
-        </RelativeLayout>
-
-    </ScrollView>
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/text"
+        android:layout_margin="10dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/flame_it"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
+        android:layout_centerInParent="true"
+        ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/ad_banner" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/adView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/share"
+        android:src="@android:drawable/ic_menu_share"
+        android:tooltipText="@string/share"
+        ads:fabSize="normal" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/adView"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@id/fab"
+        android:layout_toStartOf="@id/fab"
+        android:contentDescription="@string/view_on_web"
+        android:src="@drawable/ic_link"
+        android:tooltipText="@string/view_on_web"
+        ads:fabSize="mini" />
 
 </RelativeLayout>
